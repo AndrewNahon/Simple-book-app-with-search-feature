@@ -1,0 +1,16 @@
+<h2 class="content-subhead">Search</h2>
+
+<form action="/search" method="get">
+  <input name="query" value="<%= params[:query] %>">
+  <button type="submit">Search</button>
+</form>
+
+<ol>
+  <% @results.each do |chap_num| %>
+
+    <li>
+      <a href=<%="/chapters/#{chap_num}" %>> <%="#{@contents[chap_num - 1]}" %></a>
+    </li>
+
+  <% end %>
+</ol>
